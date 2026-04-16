@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ez Rez — Score Impossible Reservations</title>
+<meta name="description" content="Ez Rez tracks when NYC's hardest restaurants release new tables and alerts you at the perfect moment to book.">
+<link rel="icon" type="image/png" href="icon.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #FFFFFF; color: #141414;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 60px 24px; text-align: center;
+  }
+
+  .logo { width: 80px; height: 80px; border-radius: 20px; margin-bottom: 32px; box-shadow: 0 8px 24px rgba(240,101,32,0.25); }
+
+  h1 { font-size: clamp(36px, 6vw, 56px); font-weight: 900; letter-spacing: -2px; line-height: 1.05; margin-bottom: 16px; }
+  h1 span { color: #F06520; }
+
+  .subtitle { font-size: clamp(16px, 2.5vw, 20px); color: #737373; max-width: 520px; line-height: 1.5; margin-bottom: 40px; }
+
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 32px; border-radius: 99px;
+    font-size: 16px; font-weight: 700; text-decoration: none;
+    transition: transform 0.15s;
+  }
+  .cta:hover { transform: scale(1.03); }
+  .cta-primary { background: #141414; color: #FFF; }
+  .cta-secondary { background: #F5F5F5; color: #141414; }
+
+  .features {
+    padding: 80px 24px; max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+  }
+
+  .feature {
+    padding: 32px; border-radius: 20px; background: #FAFAFA;
+    border: 1px solid #F0F0F0;
+  }
+  .feature-icon { font-size: 32px; margin-bottom: 16px; }
+  .feature h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .feature p { font-size: 14px; color: #737373; line-height: 1.5; }
+
+  .stats {
+    padding: 60px 24px; text-align: center;
+    background: #141414; color: #FFF;
+  }
+  .stats-grid { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+  .stat-num { font-size: 48px; font-weight: 900; color: #F06520; letter-spacing: -2px; }
+  .stat-label { font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+  .platforms {
+    padding: 60px 24px; text-align: center;
+  }
+  .platforms h2 { font-size: 28px; font-weight: 800; margin-bottom: 24px; letter-spacing: -1px; }
+  .platform-pills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .platform-pill {
+    padding: 10px 20px; border-radius: 99px; font-size: 14px; font-weight: 600;
+    border: 2px solid #EBEBEB;
+  }
+
+  footer {
+    padding: 40px 24px; text-align: center; border-top: 1px solid #F0F0F0;
+  }
+  footer p { font-size: 13px; color: #A3A3A3; }
+  footer a { color: #F06520; text-decoration: none; }
+
+  .support {
+    padding: 60px 24px; text-align: center; max-width: 500px; margin: 0 auto;
+  }
+  .support h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
+  .support p { font-size: 14px; color: #737373; line-height: 1.5; margin-bottom: 20px; }
+  .support a {
+    display: inline-block; padding: 12px 28px; border-radius: 99px;
+    background: #F06520; color: #FFF; font-weight: 700; font-size: 14px;
+    text-decoration: none; transition: transform 0.15s;
+  }
+  .support a:hover { transform: scale(1.03); }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <img src="icon.png" alt="Ez Rez" class="logo">
+  <h1>Score <span>impossible</span><br>reservations</h1>
+  <p class="subtitle">Ez Rez tracks when NYC's hottest restaurants release new tables and alerts you at the exact moment to book — before they're gone in seconds.</p>
+  <div class="cta-row">
+    <a href="https://apps.apple.com/app/ez-rez/id000000000" class="cta cta-primary">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download on iOS
+    </a>
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature">
+    <div class="feature-icon">⏱</div>
+    <h3>Drop Tracking</h3>
+    <p>We know exactly when every restaurant releases new reservations — down to the minute.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🔔</div>
+    <h3>Timed Alerts</h3>
+    <p>Get notified 10 minutes before, 2 minutes before, and the instant tables go live.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🗺</div>
+    <h3>70+ NYC Spots</h3>
+    <p>From Carbone to Per Se — every hard-to-book restaurant in the city, tracked and mapped.</p>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stats-grid">
+    <div><div class="stat-num">70+</div><div class="stat-label">Restaurants tracked</div></div>
+    <div><div class="stat-num">&lt;10s</div><div class="stat-label">Notification to booking</div></div>
+    <div><div class="stat-num">5x</div><div class="stat-label">More likely to get a table</div></div>
+  </div>
+</section>
+
+<section class="platforms">
+  <h2>Works with your favorite platforms</h2>
+  <div class="platform-pills">
+    <div class="platform-pill" style="border-color:#F06520;color:#F06520;">Resy</div>
+    <div class="platform-pill" style="border-color:#2563EB;color:#2563EB;">OpenTable</div>
+    <div class="platform-pill" style="border-color:#DC2626;color:#DC2626;">DoorDash</div>
+    <div class="platform-pill" style="border-color:#1A1A1A;color:#1A1A1A;">Tock</div>
+    <div class="platform-pill" style="border-color:#8B5CF6;color:#8B5CF6;">SevenRooms</div>
+  </div>
+</section>
+
+<section class="support" id="support">
+  <h2>Need Help?</h2>
+  <p>Have questions, feedback, or want to suggest a restaurant? We'd love to hear from you.</p>
+  <a href="mailto:support@ezrez.app">Contact Support</a>
+</section>
+
+<footer>
+  <p>&copy; 2026 Jonah Kazam. All rights reserved.</p>
+  <p style="margin-top:8px;"><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
+</footer>
+
+</body>
+</html>
